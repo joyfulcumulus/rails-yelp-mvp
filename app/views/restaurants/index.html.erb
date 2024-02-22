@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between my-3">
+  <h1 class="fs-3">Restaurants</h1>
+  <%= link_to "Add new restaurant", new_restaurant_path, class: "btn btn-primary"%>
+</div>
+
+<div class="row row-cols-3 g-2">
+  <% @restaurants.each do |restaurant| %>
+  <div class="col card p-3 rounded justify-content-between">
+    <div>
+      <p>Name: <%= restaurant.name %></p>
+      <p>Address: <%= restaurant.address %></p>
+      <p>Phone number: <%= restaurant.phone_number %></p>
+      <p>Category: <%= restaurant.category %></p>
+    </div>
+    <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+  </div>
+  <% end %>
+</div>

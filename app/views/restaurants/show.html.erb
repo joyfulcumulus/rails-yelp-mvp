@@ -1,0 +1,39 @@
+<%= link_to "< Back", restaurants_path, class: "btn btn-primary"%>
+<div class="card my-3 border-0">
+  <h1><%= @restaurant.name %></h1>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Phone number: <%= @restaurant.phone_number %></p>
+  <p>Category: <%= @restaurant.category %></p>
+</div>
+
+<hr>
+
+<div>
+  <h2>Reviews</h2>
+  <div class="card p-3 bg-light">
+    <% if @restaurant.reviews.count == 0 %>
+      <p><%= "This restaurant does not have any reviews yet." %></p>
+    <% else %>
+      <ul>
+      <% @restaurant.reviews.each do |review| %>
+        <li>
+          <p class="mb-0"><strong>Content:</strong>
+          <%= review.content %></p>
+          <p><strong>Rating:</strong>
+          <%= review.rating %></p>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+    <h3 class="fs-5">Leave a review</h3>
+    <div class="card bg-white p-3">
+      <% @review = Review.new %>
+      <%= simple_form_for([@restaurant, @review]) do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between my-3">
+  <h1 class="fs-3">Add a new restaurant</h1>
+  <%= link_to "< Back", restaurants_path, class: "btn btn-primary"%>
+</div>
+
+<div>
+  <% cat = %w[chinese italian japanese french belgian] %>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: cat %>
+    <div>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
