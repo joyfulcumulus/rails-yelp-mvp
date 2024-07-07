@@ -1,24 +1,15 @@
-# README
+# Yelp MVP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a mock up of a food delivery app (e.g Yelp).
 
-Things you may want to cover:
+It has the following features
+* Displays list of restaurants
+* View details of 1 restaurant, and add review
+* Add new restaurant (probably for admin users only)
 
-* Ruby version
+Screenshots of application
+![screenshot of home page](yelp-1.PNG)
 
-* System dependencies
+![screenshot of restaurant details page](yelp-2.PNG)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![screenshot of add restaurant page](yelp-3.PNG)
